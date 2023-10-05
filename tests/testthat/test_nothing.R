@@ -2,7 +2,6 @@ describe("Mean by row", {
   obtained <- return_distribution_of_mean_5_number()
   it("has the right dimension", {
     expected_length <- 2000
-    print(obtained)
     obtained_length <- nrow(obtained)
     obtained_cols <- ncol(obtained)
     expect_equal(obtained_length, expected_length)
@@ -17,8 +16,8 @@ describe("Mean by row", {
     expect_equal(obtained_means, expected_means, tolerance = 1e-2)
   })
   distributions_matrix <- return_distribution_of_mean_5_number()
+  obtained_first_example <- first_example(distributions_matrix)
   it("First example", {
-    obtained_first_example <- first_example(distributions_matrix)
     obtained_length <- length(obtained_first_example)
     expected_length <- 2000
     expect_equal(obtained_length, expected_length)
@@ -26,8 +25,8 @@ describe("Mean by row", {
     obtained_mean <- mean(obtained_first_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
   })
+  obtained_second_example <- second_example(distributions_matrix)
   it("Second example", {
-    obtained_second_example <- second_example(distributions_matrix)
     obtained_length <- length(obtained_second_example)
     expected_length <- 2000
     expect_equal(obtained_length, expected_length)
@@ -35,8 +34,15 @@ describe("Mean by row", {
     obtained_mean <- mean(obtained_second_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
     obtained_range_length <- max(obtained_second_example) - min(obtained_second_example)
-    print(obtained_range_length)
     is_a_distribution <- obtained_range_length > 0
     expect_true(is_a_distribution)
+  })
+  it("Obtain standard deviation", {
+    first_example_sd <- sd(obtained_first_example)
+    second_example_sd <- sd(obtained_second_example)
+    is_wider_the_first <- first_example_sd > second_example_sd
+    expect_true(is_wider_the_first)
+    print(paste0("Desviación del primer ejemplo ", first_example_sd))
+    print(paste0("Desviación del segundo ejemplo ", second_example_sd))
   })
 })

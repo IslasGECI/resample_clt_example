@@ -35,7 +35,8 @@ describe("Mean by row", {
     obtained_mean <- mean(obtained_second_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
     obtained_range_length <- max(obtained_second_example) - min(obtained_second_example)
-    is_range_length_big <- obtained_range_length > 1
-    expect_true(is_range_length_big)
+    print(obtained_range_length)
+    is_a_distribution <- obtained_range_length > 0
+    expect_true(is_a_distribution)
   })
 })

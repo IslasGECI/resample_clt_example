@@ -9,5 +9,6 @@ first_example <- function(distributions) {
 }
 
 second_example <- function(distributions) {
-  rep(44, 2000)
+  n_samples <- 2000
+  comprehenr::to_vec(for (i in 1:n_samples) mean(sample(distributions, replace = TRUE)))
 }

@@ -19,7 +19,7 @@ describe("Mean by row", {
   distributions_matrix <- return_distribution_of_mean_5_number()
   it("First example", {
     obtained_first_example <- first_example(distributions_matrix)
-    obtained_length <- nrow(obtained_first_example)
+    obtained_length <- length(obtained_first_example)
     expected_length <- 2000
     expect_equal(obtained_length, expected_length)
   })

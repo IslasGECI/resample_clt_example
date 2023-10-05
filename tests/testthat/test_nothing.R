@@ -34,5 +34,8 @@ describe("Mean by row", {
     expected_mean <- mean(c(10, 20, 30, 60, 100))
     obtained_mean <- mean(obtained_second_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
+    obtained_range_length <- max(obtained_second_example) - min(obtained_second_example)
+    is_range_length_big <- obtained_range_length > 1
+    expect_true(is_range_length_big)
   })
 })

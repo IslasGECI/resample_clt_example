@@ -9,5 +9,5 @@ first_example <- function(distributions) {
 }
 
 second_example <- function(distributions) {
-  seq(2000)
+  rep(44, 2000)
 }

@@ -2,7 +2,6 @@ describe("Mean by row", {
   obtained <- return_distribution_of_mean_5_number()
   it("has the right dimension", {
     expected_length <- 2000
-    print(obtained)
     obtained_length <- nrow(obtained)
     obtained_cols <- ncol(obtained)
     expect_equal(obtained_length, expected_length)
@@ -12,10 +11,13 @@ describe("Mean by row", {
   it("The means of columns are differents", {
     expected_mean_first_column <- 10
     expected_mean_second_column <- 20
-    expected_means <- c(expected_mean_first_column, expected_mean_second_column)
+    expected_means <- c(expected_mean_first_column, expected_mean_second_column, 30, 60, 100)
     obtained_mean_first_column <- mean(obtained[, 1])
     expect_equal(obtained_mean_first_column, expected_means[1], tolerance = 1e-2)
     obtained_mean_second_column <- mean(obtained[, 2])
     expect_equal(obtained_mean_second_column, expected_means[2], tolerance = 1e-2)
+    obtained_means <- comprehenr::to_vec(for (i in 1:5) mean(obtained[, i]))
+    print(obtained_means)
+    expect_equal(obtained_means, expected_means)
   })
 })

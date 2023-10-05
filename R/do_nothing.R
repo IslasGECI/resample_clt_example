@@ -7,3 +7,7 @@ first_example <- function(distributions) {
   n_samples <- 2000
   comprehenr::to_vec(for (i in 1:n_samples) mean(distributions[i, ]))
 }
+
+second_example <- function(distributions) {
+  seq(2000)
+}

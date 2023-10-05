@@ -26,4 +26,10 @@ describe("Mean by row", {
     obtained_mean <- mean(obtained_first_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
   })
+  it("Second example", {
+    obtained_second_example <- second_example(distributions_matrix)
+    obtained_length <- length(obtained_second_example)
+    expected_length <- 2000
+    expect_equal(obtained_length, expected_length)
+  })
 })

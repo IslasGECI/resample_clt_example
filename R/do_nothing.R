@@ -4,5 +4,6 @@ return_distribution_of_mean_5_number <- function() {
 }
 
 first_example <- function(distributions) {
-  seq(2000)
+  n_samples <- 2000
+  comprehenr::to_vec(for (i in 1:n_samples) mean(distributions[i, ]))
 }

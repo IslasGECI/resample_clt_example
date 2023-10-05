@@ -22,7 +22,7 @@ describe("Mean by row", {
     obtained_length <- length(obtained_first_example)
     expected_length <- 2000
     expect_equal(obtained_length, expected_length)
-    expected_mean <- mean(10, 20, 30, 60, 100)
+    expected_mean <- mean(c(10, 20, 30, 60, 100))
     obtained_mean <- mean(obtained_first_example)
     expect_equal(obtained_mean, expected_mean, tolerance = 1e-2)
   })
